@@ -13,21 +13,6 @@ set number
 set hlsearch
 set mouse=a
 
-set ttimeoutlen=50
-
-"set whichwrap+=<,>,[,]
-set backspace=indent,eol,start
-"set wrap!
-
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-nnoremap <C-h> <Left>
-nnoremap <C-j> <Down>
-nnoremap <C-k> <Up>
-nnoremap <C-l> <Right>
-
 inoremap <C-p> <C-o>p
 inoremap <C-e> <C-o>e
 inoremap <C-q> <C-o>b
@@ -51,12 +36,6 @@ nnoremap <C-Down> <S-g>
 inoremap <C-Up> <C-o>gg
 inoremap <C-Down> <C-o><S-g>
 
-"inoremap <C-w> <C-o>diw
-"nnoremap <C-w> diw
-
-
-
-
 inoremap <S-Up> <Esc>v<Up>
 nnoremap <S-Up> v<Up>
 vnoremap <S-Up> <Up>
@@ -65,13 +44,17 @@ nnoremap <S-Down> v<Down>
 vnoremap <S-Down> <Down>
 
 
-inoremap <C-s> <C-o>:w<CR>
-nnoremap <C-s> :w<CR>
-
-"nanoremap <A-v> <Esc>v
-"inoremap <A-v> <Esc>v
-"vnoremap <A-v> <Esc>v
-
+set ttimeoutlen=0
+set wildmode=longest,list,full
 set clipboard^=unnamed,unnamedplus
 
+vnoremap > >gv
+vnoremap < <gv
+
+nnoremap d "_d
+vnoremap d "_d
+vnoremap P "_dP
+
+command -nargs=* -complete=file T tabnew <args>
+command -nargs=* Fs Files <args>
 
