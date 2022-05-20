@@ -13,7 +13,7 @@ set number
 set hlsearch
 set mouse=a
 
-inoremap <C-p> <C-o>p
+inoremap <C-p> <C-o>P
 inoremap <C-e> <C-o>e
 inoremap <C-q> <C-o>b
 inoremap <C-u> <C-o>:u<CR>
