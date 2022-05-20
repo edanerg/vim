@@ -55,6 +55,7 @@ nnoremap d "_d
 vnoremap d "_d
 vnoremap P "_dP
 
-command -nargs=* -complete=file T tabnew <args>
-command -nargs=* Fs Files <args>
+command! -nargs=1 -complete=file T tabnew <args>
+command! -nargs=1 -complete=file O tab drop <args>
+command  -nargs=* Fs Files <args>
 
