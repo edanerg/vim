@@ -84,10 +84,15 @@ let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
 
+"python synstatic
+let g:syntastic_python_checkers = ['flake8']
+"dont check python styles
+let g:syntastic_quiet_messages = { "type": "style" }
+
 "ultisnippets
 let g:UltiSnipsExpandTrigger="<c-f>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetsDir="~/.vim/pack/vendor/start/ultisnips/mysnips"
+let g:UltiSnipsSnippetDirectories = ["/home/wyt/.vim/pack/wyt/start/ultisnips/mysnips"]
 let g:UltiSnipsEditSplit="vertical"
 command -nargs=* SE UltiSnipsEdit <args>
