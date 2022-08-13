@@ -96,3 +96,14 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories = ["/home/wyt/.vim/pack/wyt/start/ultisnips/mysnips"]
 let g:UltiSnipsEditSplit="vertical"
 command -nargs=* SE UltiSnipsEdit <args>
+
+"convenient for replacing
+function ReplaceAll(old, new)
+    let replaceCmd = 'ag -l ' . a:old . ' | xargs sed -i '''' -e ' . '''s/' . a:old . '/' . a:new . '/g'''
+    echom replaceCmd
+endfunction
+
+command -nargs=1 R :%s//<args>/g
+command -nargs=* RA call ReplaceAll(<f-args>)
+
+
