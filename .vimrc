@@ -101,6 +101,7 @@ command -nargs=* SE UltiSnipsEdit <args>
 function ReplaceAll(old, new)
     let replaceCmd = 'ag -l ' . a:old . ' | xargs sed -i '''' -e ' . '''s/' . a:old . '/' . a:new . '/g'''
     echom replaceCmd
+    call system(replaceCmd)
 endfunction
 
 command -nargs=1 R :%s//<args>/g
